@@ -1,0 +1,215 @@
+/* ===========================
+   HEADER CONTAINER
+=========================== */
+.header {
+  background-color: #5b5ce2;
+  color: white;
+  padding: 18px 28px;
+  /* adjust horizontal padding if needed */
+  border-radius: 10px;
+  font-family: system-ui, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   HEADER TOP SECTION
+=========================== */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  /* prevents overflow */
+}
+
+.logo-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
+.app-subtitle {
+  font-size: 13px;
+  opacity: 0.92;
+  margin: 4px 0 0 0;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.welcome-text {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ===========================
+   HEADER BOTTOM (ROLE TABS)
+   Centered, aligned and responsive
+=========================== */
+.header-bottom {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* The role-tabs container is centered, has a controlled max-width
+   and uses grid so each tab is equal width. Adjust max-width to
+   match how wide you want the entire tab group to be. */
+.role-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  /* narrower minimum */
+  column-gap: 16px;
+  /* reduced gap between tabs */
+  row-gap: 12px;
+  width: 100%;
+  max-width: 1400px;
+  /* controls overall width of all tabs together */
+  padding: 6px 10px;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   ROLE TAB STYLING
+=========================== */
+.role-tab {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: white;
+  padding: 14px 18px;
+  /* reduces visual width while preserving height */
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  width: 100%;
+  min-width: 0;
+  /* allow grid to control width */
+  box-shadow: none;
+  text-align: center;
+}
+
+.role-tab:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transform: translateY(-3px);
+}
+
+.role-tab.active {
+
+  font-weight: 600;
+}
+
+/* ===========================
+   RESPONSIVE BEHAVIOR
+=========================== */
+
+/* Larger screens: make tabs a bit wider and reduce gap */
+@media (min-width: 1600px) {
+  .role-tabs {
+    max-width: 1600px;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    column-gap: 18px;
+  }
+
+  .role-tab {
+    padding: 16px 22px;
+    font-size: 16px;
+  }
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 992px) {
+  .role-tabs {
+    max-width: 1000px;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    column-gap: 14px;
+  }
+
+  .role-tab {
+    padding: 14px 18px;
+  }
+}
+
+/* Small tablet / large phone: 2 columns narrower */
+@media (max-width: 768px) {
+  .role-tabs {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    column-gap: 12px;
+  }
+
+  .role-tab {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile: single column (stacked) */
+@media (max-width: 480px) {
+  .role-tabs {
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    padding: 8px;
+  }
+
+  .role-tab {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

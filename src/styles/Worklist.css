@@ -1,0 +1,590 @@
+.worklist-container {
+  background-color: #f9fafb;
+  padding: 28px 36px;
+  font-family: "Inter", sans-serif;
+  color: #111827;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.worklist-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* ---------- FILTER BAR ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-bar button {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.filter-bar button:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.filter-bar button:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* ---------- TABLE ---------- */
+.worklist-table-wrapper {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.worklist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.worklist-table th {
+  background: #f9fafb;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Header text + arrow alignment */
+.th-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  position: relative;
+}
+
+.sort-icons {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  line-height: 8px;
+  color: #9ca3af;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+}
+
+.sort-icons .up {
+  margin-bottom: 2px;
+}
+
+.sort-icons .up:hover,
+.sort-icons .down:hover {
+  color: #111827;
+}
+
+.worklist-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f1f1;
+  vertical-align: middle;
+}
+
+.part-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.part-cell .id {
+  font-weight: 600;
+  margin: 0;
+}
+
+.part-cell .sub {
+  color: #6b7280;
+  font-size: 12px;
+  margin: 0;
+}
+
+.priority.high {
+  background-color: #fee2e2;
+  color: #dc2626;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.priority.medium {
+  background-color: #fef3c7;
+  color: #b45309;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.due-cell p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.due-cell .date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.assignee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .badge {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 6px 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+} */
+
+
+.badge {
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 6px 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.badge.blue {
+  background-color: #3b82f6; /* BT - Blue */
+}
+
+.badge.green {
+  background-color: #22c55e; /* AN - Green */
+}
+
+.badge.purple {
+  background-color: #a855f7; /* CO - Purple */
+}
+
+.badge.orange {
+  background-color: #f97316; /* LO - Orange */
+}
+
+.status {
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status.open {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status.in-progress {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.status.done {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+.worklist-table tr:hover {
+  background-color: #f9fafc;
+}
+
+
+.sort-icon {
+  margin-left: 6px;
+  vertical-align: middle;
+  color: #6b7280; /* neutral grey */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.sort-icon:hover {
+  color: #111827; /* darker when hovered */
+}
+.worklist-main {
+  display: flex;
+  position: relative;
+}
+
+.worklist-table tr.selected {
+  background-color: #eef2ff;
+}
+
+/* Highlight the active sorting icon */
+.sort-icon.active {
+  color: #111827;
+  transform: scale(1.05);
+}
+
+/* Add subtle rotation effect to indicate direction */
+.sort-icon.up {
+  transform: rotate(0deg);
+}
+
+.sort-icon.down {
+  transform: rotate(180deg);
+}
+
+
+
+
+.worklist-content {
+  display: flex;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  height: calc(100vh - 180px);
+}
+
+.worklist-table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.selected-row {
+  background-color: #e0f2fe;
+}
+
+
+
+.worklist-page {
+  display: flex;
+  height: 100vh;
+}
+
+.worklist-container {
+  flex: 1;
+  background: #f9fafb;
+  padding: 28px 36px;
+  font-family: "Inter", sans-serif;
+  color: #111827;
+}
+
+.worklist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.worklist-table th,
+.worklist-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.worklist-table th {
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+.row:hover {
+  background-color: #eef2ff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.row.active {
+  background-color: #e0e7ff;
+  font-weight: 500;
+}
+
+
+
+.table-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f3f4f6; /* light gray hover */
+}
+
+.table-row.selected {
+  background-color: #e0e7ff; /* highlighted when clicked */
+  border-left: 4px solid #2563eb;
+}
+
+
+
+/* Dropdown Styles */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #111827;
+  transition: all 0.2s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #f3f4f6;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  width: 180px;
+  z-index: 100;
+  padding: 4px 0;
+  list-style: none;        /* ✅ Removes bullet points */
+  margin: 0;               /* ✅ Removes default spacing */
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #111827;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f9fafb;
+}
+
+
+
+/* Header section */
+/* .worklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+} */
+
+.worklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.worklist-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Right controls */
+/* .right-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
+
+
+
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+
+/* Search bar */
+/* .search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 6px 10px;
+  width: 220px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-icon {
+  margin-right: 6px;
+  color: #9ca3af;
+} */
+
+
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background-color: #fff;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  margin-left: 6px;
+  font-size: 14px;
+  width: 160px;
+}
+
+.search-icon {
+  color: #6b7280;
+}
+
+
+
+
+/* Profile icon */
+.profile-icon {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Batch Actions */
+.batch-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+/* .batch-dropdown {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+} */
+
+
+
+.batch-dropdown {
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.batch-dropdown:hover {
+  background-color: #f9fafb;
+}
+
+
+
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .worklist-container {
+    padding: 16px;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .filter-dropdown {
+    width: 100%;
+  }
+
+  .worklist-table {
+    font-size: 12px;
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .worklist-title {
+    font-size: 18px;
+  }
+
+  .worklist-table th,
+  .worklist-table td {
+    padding: 8px 10px;
+  }
+
+  .assignee-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+}
+
+
+
+.risk-type-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.risk-type-cell svg {
+  flex-shrink: 0;
+}
+
+.risk-text {
+  font-weight: 500;
+  color: #374151;
+}
+
+tr:hover .risk-type-cell svg {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}

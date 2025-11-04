@@ -1,0 +1,282 @@
+.detail-panel {
+  width: 380px;
+  background: #fff;
+  border-left: 1px solid #e5e7eb;
+  padding: 22px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  font-family: "Inter", sans-serif;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.detail-header h3 {
+  font-size: 16px;
+  color: #111827;
+  margin: 0;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.scenario-summary {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.scenario-summary p {
+  font-size: 14px;
+  color: #374151;
+  margin: 4px 0;
+}
+
+.metrics {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.metric {
+  flex: 1;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.metric p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.metric span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.metric.negative {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.metric.positive {
+  background: #d1fae5;
+  color: #059669;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 20px;
+}
+
+.section h4 {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.detail-grid p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #374151;
+}
+
+.medium-risk {
+  color: #b45309;
+  background: #fef3c7;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* Recommendation Box */
+.recommendation-box {
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.recommendation-box .label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.recommendation-box .value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.radio-group input {
+  margin-right: 6px;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  resize: none;
+  margin-top: 8px;
+  height: 60px;
+}
+
+/* Comments */
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.comment-avatar {
+  width: 28px;
+  height: 28px;
+  background: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.comment-author {
+  font-weight: 500;
+  color: #111827;
+  font-size: 14px;
+}
+
+.comment-author span {
+  color: #6b7280;
+  font-weight: 400;
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.comment-text {
+  color: #374151;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.add-comment-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.add-comment-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Simulation Toggle */
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #d1d5db;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #2563eb;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Run Simulation Button */
+.run-btn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.run-btn:hover {
+  background: #1d4ed8;
+}

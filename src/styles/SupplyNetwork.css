@@ -1,0 +1,115 @@
+.supplynetwork-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  font-family: "Inter", sans-serif;
+  margin-top: 30px;
+}
+
+/* Header */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.title-section h3 {
+  font-size: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+.filter-btn, .export-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+.export-btn:hover, .filter-btn:hover {
+  background: #f3f4f6;
+}
+
+/* Alert Banner */
+.alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef2f2;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #b91c1c;
+  font-size: 14px;
+  position: relative;
+}
+.tier3-text { font-weight: 600; }
+.view-details {
+  position: absolute;
+  right: 16px;
+  color: #3b82f6;
+  font-size: 13px;
+  text-decoration: none;
+}
+.view-details:hover { text-decoration: underline; }
+
+/* Tree */
+.tree-container { text-align: center; margin-top: 20px; }
+.tree-svg { width: 100%; height: 520px; }
+.path { stroke: #e5e7eb; stroke-width: 1.6; fill: none; }
+.node { stroke-width: 2; }
+.node.level1 { fill: #e0e7ff; stroke: #6366f1; }
+.node.level2 { fill: #fff7ed; stroke: #f97316; }
+.node.level3 { fill: #faf5ff; stroke: #a855f7; }
+.node.level4 { fill: #eff6ff; stroke: #3b82f6; }
+
+.label { font-size: 12px; fill: #374151; }
+.label-small { font-size: 10px; fill: #6b7280; }
+
+/* Stats */
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+.stat-card {
+  text-align: center;
+  flex: 1;
+}
+.stat-card h4 {
+  font-size: 14px;
+  color: #374151;
+}
+.value {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+.value.orange { color: #f97316; }
+.value.purple { color: #9333ea; }
+.value.blue { color: #2563eb; }
+.visibility {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.visibility.green { color: #16a34a; }
+.visibility.purple { color: #9333ea; }
+.visibility.red { color: #dc2626; }
+.updated { color: #6b7280; font-size: 12px; }
