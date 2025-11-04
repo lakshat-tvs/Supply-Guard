@@ -107,3 +107,34 @@
   opacity: 0;
   visibility: hidden;
 }
+/* Submenu under Scenario Analysis */
+.submenu {
+  list-style: none;
+  padding-left: 30px;
+  margin-top: 5px;
+}
+
+.submenu-item {
+  padding: 6px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.submenu-item.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.submenu-item:hover {
+  color: #1d4ed8;
+}
+
+.submenu-icon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
