@@ -92,7 +92,7 @@ import "../styles/MainLayout.css";
 
 export default function MainLayout() {
   // ✅ Default active is "view-scenario" to show ScenarioCatalog immediately
-  const [active, setActive] = useState("view-scenario");
+  const [active, setActive] = useState("overview");
 
   const renderContent = () => {
     switch (active) {
