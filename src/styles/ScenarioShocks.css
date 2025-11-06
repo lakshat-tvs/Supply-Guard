@@ -1,0 +1,230 @@
+.scenario-wrapper {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.scenario-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.scenario-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.scenario-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Stepper Navigation */
+.scenario-steps {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.step {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: #f3f4f6;
+  color: #555;
+}
+
+.step.active {
+  background: #2563eb;
+  color: white;
+}
+
+.step.done {
+  background: #e0e7ff;
+  color: #2563eb;
+}
+
+/* Main section */
+.scenario-shocks {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.scenario-shocks h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.disruption-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.disruption-card {
+  width: 180px;
+  height: 100px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.disruption-card:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+  transform: translateY(-3px);
+}
+
+.disruption-card .icon {
+  margin-bottom: 8px;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Gradient highlight for Factory Shutdown */
+.disruption-card.selected.factory-gradient {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  transform: scale(1.02);
+}
+
+.factory-gradient .icon svg {
+  color: #fff;
+}
+
+.factory-gradient .label {
+  color: #fff;
+}
+
+/* Factory Configuration */
+.factory-config {
+  margin: 30px auto;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 25px 30px;
+  width: 85%;
+  text-align: left;
+}
+
+.factory-config h4 {
+  margin-bottom: 20px;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+}
+
+.config-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.config-group label {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.config-group input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: #111827;
+  transition: all 0.2s ease;
+}
+
+.config-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Duration input with numeric spinner */
+.duration-input {
+  -moz-appearance: textfield;
+  appearance: auto;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.duration-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Footer */
+.scenario-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  border: none;
+  color: #111827;
+  border-radius: 6px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+
+
+
