@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 import MainLayout from "./pages/MainLayout";
+import "leaflet/dist/leaflet.css";
+
 
 export default function App() {
   return (

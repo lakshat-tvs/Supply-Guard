@@ -7,15 +7,24 @@ import {
   UserCheck,
   LineChart,
 } from "lucide-react";
+import DisasterEvent from "../components/DisasterEvent";
 
 export default function ScenarioShocks({ setActive }) {
   const [selectedEvent, setSelectedEvent] = useState("Factory Shutdown");
 
-  // Editable fields
+  // Factory Shutdown State
   const [site, setSite] = useState("Shanghai Manufacturing");
   const [capacityImpact, setCapacityImpact] = useState("100% shutdown");
   const [startDate, setStartDate] = useState("");
   const [duration, setDuration] = useState(6);
+
+  // Tariff State
+  const [affectedCountries, setAffectedCountries] = useState("China, Vietnam");
+  const [tariffRate, setTariffRate] = useState(25);
+  const [tariffEffectiveDate, setTariffEffectiveDate] = useState("");
+  const [productCategories, setProductCategories] = useState(
+    "Electronics, Components"
+  );
 
   const disruptionEvents = [
     { id: 1, label: "Factory Shutdown", icon: <Factory size={20} /> },
@@ -43,7 +52,7 @@ export default function ScenarioShocks({ setActive }) {
         </button>
       </div>
 
-      {/* Step Navigation */}
+      {/* Steps */}
       <div className="scenario-steps">
         <button className="step done">1 Details</button>
         <button className="step active">2 Shocks</button>
@@ -51,7 +60,7 @@ export default function ScenarioShocks({ setActive }) {
         <button className="step">4 Review & Run</button>
       </div>
 
-      {/* Main Section */}
+      {/* Disruption Events */}
       <div className="scenario-shocks">
         <h3>Define Disruption Events</h3>
 
@@ -60,12 +69,7 @@ export default function ScenarioShocks({ setActive }) {
             <div
               key={event.id}
               className={`disruption-card ${
-                selectedEvent === event.label ? "selected" : ""
-              } ${
-                event.label === "Factory Shutdown" &&
-                selectedEvent === "Factory Shutdown"
-                  ? "factory-gradient"
-                  : ""
+                selectedEvent === event.label ? "selected factory-gradient" : ""
               }`}
               onClick={() => setSelectedEvent(event.label)}
             >
@@ -75,35 +79,29 @@ export default function ScenarioShocks({ setActive }) {
           ))}
         </div>
 
-        {/* Factory Shutdown Configuration */}
+        {/* Factory Shutdown Section */}
         {selectedEvent === "Factory Shutdown" && (
           <div className="factory-config">
             <h4>Factory Shutdown Configuration</h4>
-
             <div className="config-grid">
-              {/* Editable Select Site */}
               <div className="config-group">
                 <label>Select Site</label>
                 <input
                   type="text"
                   value={site}
                   onChange={(e) => setSite(e.target.value)}
-                  placeholder="Enter site name"
                 />
               </div>
 
-              {/* Editable Capacity Impact */}
               <div className="config-group">
                 <label>Capacity Impact</label>
                 <input
                   type="text"
                   value={capacityImpact}
                   onChange={(e) => setCapacityImpact(e.target.value)}
-                  placeholder="Enter impact (e.g., 80% shutdown)"
                 />
               </div>
 
-              {/* Start Date */}
               <div className="config-group">
                 <label>Start Date</label>
                 <input
@@ -113,7 +111,6 @@ export default function ScenarioShocks({ setActive }) {
                 />
               </div>
 
-              {/* Duration (weeks) */}
               <div className="config-group">
                 <label>Duration (weeks)</label>
                 <input
@@ -121,9 +118,78 @@ export default function ScenarioShocks({ setActive }) {
                   min="1"
                   value={duration}
                   onChange={(e) => setDuration(Number(e.target.value))}
-                  className="duration-input"
                 />
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Disaster Event */}
+        {selectedEvent === "Disaster Event" && <DisasterEvent />}
+
+        {/* Tariff Configuration */}
+        {selectedEvent === "Tariffs" && (
+          <div className="factory-config">
+            <h4>Tariff Configuration</h4>
+            <div className="config-grid">
+              <div className="config-group">
+                <label>Affected Countries</label>
+                <input
+                  type="text"
+                  value={affectedCountries}
+                  onChange={(e) => setAffectedCountries(e.target.value)}
+                  placeholder="e.g. China, Vietnam"
+                />
+              </div>
+
+              <div className="config-group">
+                <label>Tariff Rate (%)</label>
+                <input
+                  type="number"
+                  min="0"
+                  value={tariffRate}
+                  onChange={(e) => setTariffRate(Number(e.target.value))}
+                />
+              </div>
+
+              <div className="config-group">
+                <label>Effective Date</label>
+                <input
+                  type="date"
+                  value={tariffEffectiveDate}
+                  onChange={(e) => setTariffEffectiveDate(e.target.value)}
+                />
+              </div>
+
+              <div className="config-group">
+                <label>Product Categories</label>
+                <input
+                  type="text"
+                  value={productCategories}
+                  onChange={(e) => setProductCategories(e.target.value)}
+                  placeholder="e.g. Electronics, Components"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ✅ Vendor Health Section */}
+        {selectedEvent === "Vendor Health" && (
+          <div className="vendor-health-config">
+            <h4>Vendor Health Configuration</h4>
+            <div className="vendor-placeholder">
+              Configuration options for Vendor Health will appear here
+            </div>
+          </div>
+        )}
+
+        {/* Placeholder for Commodity (optional future use) */}
+        {selectedEvent === "Commodity" && (
+          <div className="vendor-health-config">
+            <h4>Commodity Configuration</h4>
+            <div className="vendor-placeholder">
+              Configuration options for Commodity will appear here
             </div>
           </div>
         )}
@@ -141,66 +207,3 @@ export default function ScenarioShocks({ setActive }) {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
