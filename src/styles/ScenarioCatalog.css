@@ -1,33 +1,39 @@
 
+/* Base layout */
 .scenario-page {
-  padding: 30px;
-  background: #fff;
-  height: 100%;
-  overflow-y: auto;
-  font-family: "Inter", sans-serif;
+  padding: 20px 40px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
 }
 
+/* Header section */
 .scenario-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 25px;
 }
 
 .scenario-header h2 {
-  font-size: 1.6rem;
   margin: 0;
-  color: #111827;
+  font-weight: 600;
+  font-size: 1.6rem;
 }
 
 .scenario-header p {
   color: #6b7280;
   font-size: 0.9rem;
+  margin-top: 4px;
 }
 
+/* Header actions */
 .scenario-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .compare-btn,
@@ -35,191 +41,177 @@
   border: none;
   border-radius: 8px;
   padding: 8px 14px;
-  cursor: pointer;
   font-weight: 500;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .compare-btn {
-  background: #fff;
+  background-color: white;
   border: 1px solid #d1d5db;
 }
 
+.compare-btn:hover {
+  background-color: #f3f4f6;
+}
+
 .new-btn {
-  background: #2563eb;
-  color: #fff;
+  background-color: #2563eb;
+  color: white;
 }
 
 .new-btn:hover {
-  background: #1d4ed8;
+  background-color: #1d4ed8;
 }
 
+/* Card grid */
 .scenario-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
+/* Individual card */
 .scenario-card {
-  border: 1px solid #e5e7eb;
+  background: white;
   border-radius: 12px;
-  background: #fff;
-  padding: 18px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .scenario-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Top section inside card */
 .scenario-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
+.scenario-top h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Tag styling */
 .scenario-tag {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  margin-bottom: 10px;
   font-weight: 500;
-  margin-top: 6px;
 }
 
-.scenario-details {
-  margin-top: 10px;
-  font-size: 0.85rem;
+/* Card details */
+.scenario-details p {
+  margin: 4px 0;
+  font-size: 0.9rem;
   color: #374151;
 }
 
-.red {
-  color: #dc2626;
+.impact-text {
+  color: #b91c1c;
   font-weight: 600;
-  margin-left: 4px;
+  margin-left: 100px;
 }
 
+/* Footer text */
+.owner-text {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-bottom: 2px;
+}
+
+.date-text {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Status badge */
+.status {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* Footer layout */
 .scenario-footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 6px 0;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
-.status {
-  border-radius: 8px;
-  padding: 3px 8px;
-  font-size: 0.75rem;
-}
-
-.date {
-  font-size: 0.8rem;
-  color: #6b7280;
-}
-
+/* Links */
 .scenario-link {
   display: block;
-  text-decoration: none;
+  margin-top: 8px;
+  font-size: 0.9rem;
   color: #2563eb;
   font-weight: 500;
-  margin-top: 4px;
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  text-decoration: none;
+}
+
+.scenario-link:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .scenario-page {
+    padding: 16px 20px;
+  }
+
+  .scenario-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .scenario-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .scenario-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-text {
+    margin-left: 0;
+    display: block;
+    margin-top: 6px;
+  }
+}
+
+/* 💻 Tablet responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .scenario-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scenario-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .compare-btn,
+  .new-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
