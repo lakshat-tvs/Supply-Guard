@@ -1,0 +1,78 @@
+.erp-container {
+  width: 100%;
+  padding: 20px 1px;  /* reduces empty spacing on sides */
+}
+
+
+.erp-title {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.erp-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.erp-status-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 35px 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.erp-status-card {
+  text-align: center;
+}
+
+.circle-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.erp-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d1a3a;
+}
+
+.erp-card-status {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #696969;
+}
+
+
+.erp-card {
+   background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+.erp-title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.erp-status-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}

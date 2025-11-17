@@ -1,4 +1,4 @@
-/* Entire Card Wrapper */
+
 .rtm-card-wrapper {
   background: #fff;
   border-radius: 12px;
@@ -8,7 +8,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Header */
+
 .rtm-header {
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@
   font-size: 13px;
 }
 
-/* Layout */
+
 .rtm-main {
   display: flex;
   align-items: flex-start;
@@ -50,7 +50,7 @@
   flex: 1;
 }
 
-/* Info Cards */
+
 .rtm-info-card {
   padding: 18px;
   border-radius: 12px;
@@ -71,14 +71,14 @@
 .circle.yellow { background: #e1a400; }
 .circle.red { background: #c31a1a; }
 
-/* AI Box */
+
 .ai-box {
   background: #e7ebff;
   padding: 18px;
   border-radius: 12px;
 }
 
-/* Bottom Cards */
+
 .rtm-bottom {
   display: flex;
   gap: 20px;
@@ -89,37 +89,57 @@
   padding: 18px;
   border-radius: 12px;
   cursor: pointer;
-  position: relative;   /* Required for badge */
+  position: relative;   
 }
 .rtm-bottom-card.red { background: #fdeaea; }
 .rtm-bottom-card.orange { background: #fff2df; }
 .rtm-bottom-card.yellow { background: #fffbd6; }
 
-/* Badge Styles — Perfect Position */
 .badge {
   position: absolute;
   top: 12px;
-  right: 14px;
-  padding: 4px 12px;
-  border-radius: 14px;
+  right: 16px;
+
+  
   font-size: 12px;
   font-weight: 600;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(3px);            
+  -webkit-backdrop-filter: blur(3px);
+
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1;
 }
 
-/* Red Badge */
+
 .badge.red {
-  background: #fee2e2;
+  background: rgba(255, 0, 0, 0.12);     
+  border-color: rgba(255, 0, 0, 0.25);
+  border-radius: 10px; 
+  padding: 10px 26px;
   color: #b91c1c;
 }
 
-/* Orange Badge */
+
 .badge.orange {
-  background: #ffe8cc;
-  color: #c76a11;
+  background: rgba(255, 165, 0, 0.18);   
+  border-radius: 10px; 
+  border-color: rgba(255, 165, 0, 0.35);
+  padding: 10px 30px;
+  color: #b45309;
 }
 
-/* Yellow Badge */
+
 .badge.yellow {
-  background: #fff4c2;
-  color: #927d00;
+  background: rgba(255, 221, 0, 0.18);   
+  border-color: rgba(255, 221, 0, 0.35);
+  border-radius: 10px; 
+  padding: 10px 32px;
+  color: #876800;
 }
+

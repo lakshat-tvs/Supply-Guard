@@ -10,6 +10,7 @@ import ScenarioMitigation from "./ScenarioMitigation";
 import ScenarioReview from "./ScenarioReview"; 
 import ScenarioResults from "./ScenarioResults"; 
 import CompareScenarios from "./CompareScenarios"; 
+import ERPIntegrationStatus from "./ERPIntegrationStatus";
 
 import "../styles/MainLayout.css";
 import RiskConfiguration from "./RiskConfiguration";
