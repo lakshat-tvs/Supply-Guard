@@ -1,0 +1,333 @@
+/* Basic page layout */
+.risk-config-page {
+  padding: 20px;
+  background: #f7fafc;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.risk-config-inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* main column */
+.risk-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.page-sub {
+  margin: 2px 0 12px;
+  color: #6b7280;
+}
+
+/* card base */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eeeef2;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(10, 10, 10, 0.03);
+}
+
+/* Risk Dimensions */
+.risk-dimensions .card-title,
+.weighting .card-title {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dimensions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dimension-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #f1f3f5;
+  background: #fff;
+}
+
+.dimension-info .dimension-title {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dimension-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* toggle switch */
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 44px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #e6e9ee;
+  border-radius: 999px;
+  transition: .2s;
+}
+
+.switch .slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(12,12,12,0.12);
+  transition: .2s;
+}
+
+.switch input:checked + .slider {
+  background-color: #2563eb;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Weighting sliders */
+.weighting .weights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.weight-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weight-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.weight-percent {
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.weight-slider {
+  width: 100%;
+  accent-color: #2563eb; /* modern browsers */
+}
+
+/* footer under weights */
+.weights-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* sidebar */
+.risk-sidebar {
+  position: relative;
+}
+
+/* Impact preview small card */
+.impact-preview h3 { margin: 0 0 10px 0; }
+
+/* config preview row */
+.config-preview {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f1f7ff;
+  border: 1px solid #e6f0ff;
+  margin-bottom: 12px;
+}
+
+.config-preview-text .muted { color: #2563eb; font-size: 13px; margin-top: 4px; }
+
+/* sample impact rows */
+.sample-impact { margin: 8px 0 14px 0; display: flex; flex-direction: column; gap: 10px; }
+
+.impact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #f1f3f5;
+}
+
+.impact-title { font-weight: 600; color: #111827; }
+.impact-sub { font-size: 13px; color: #6b7280; margin-top: 4px; }
+
+.risk-badge {
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.risk-badge.high { background: #fee2e2; color: #b91c1c; }
+.risk-badge.medium { background: #fffbeb; color: #92400e; }
+.risk-badge.low { background: #ecfdf5; color: #166534; }
+
+/* distribution */
+.risk-distribution { margin-top: 8px; display: flex; flex-direction: column; gap: 10px; }
+.dist-row { display: flex; align-items: center; gap: 8px; }
+.dist-label { width: 110px; font-size: 13px; color: #374151; }
+.dist-bar { flex: 1; height: 10px; background: #eceff6; border-radius: 6px; overflow: hidden; position: relative; }
+.dist-percent { width: 40px; text-align: right; color: #374151; font-weight: 600; }
+
+.fill { height: 100%; border-radius: 6px 0 0 6px; }
+.fill.high { background: #ef4444; }
+.fill.medium { background: #f59e0b; }
+.fill.low { background: #10b981; }
+
+/* sidebar actions */
+.sidebar-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+.btn { border: none; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+.btn.apply { background: linear-gradient(180deg,#2563eb,#1e40af); color: white; }
+.btn.reset { background: white; color: #374151; border: 1px solid #e6e9ee; }
+
+/* responsiveness */
+@media (max-width: 1024px) {
+  .risk-config-inner {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+@media (max-width: 880px) {
+  .risk-config-inner {
+    grid-template-columns: 1fr;
+  }
+  .risk-sidebar {
+    order: 2;
+  }
+  .risk-main { order: 1; }
+}
+
+
+
+
+
+
+/* -------------------- RAG THRESHOLDS STYLING -------------------- */
+.rag-thresholds {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.rag-thresholds .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1b1b1b;
+}
+
+.threshold-section {
+  margin-bottom: 24px;
+}
+
+.threshold-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+.threshold-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.threshold-box {
+  flex: 1;
+  min-width: 160px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.threshold-box label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.threshold-box input {
+  width: 70px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+}
+
+.threshold-box p {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* --- Color Variants --- */
+.threshold-box.red label { color: #d32f2f; }
+.threshold-box.red input { border-color: #f44336; }
+
+.threshold-box.amber label { color: #f9a825; }
+.threshold-box.amber input { border-color: #fbc02d; }
+
+.threshold-box.green label { color: #2e7d32; }
+.threshold-box.green input { border-color: #4caf50; }
+
+/* focus highlight */
+.threshold-box input:focus {
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.25);
+}

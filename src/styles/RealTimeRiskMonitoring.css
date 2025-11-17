@@ -1,0 +1,125 @@
+/* Entire Card Wrapper */
+.rtm-card-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.rtm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.rtm-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+.rtm-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+.rtm-country {
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Layout */
+.rtm-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+.rtm-left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.rtm-right {
+  flex: 1;
+}
+
+/* Info Cards */
+.rtm-info-card {
+  padding: 18px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+}
+.rtm-info-card.green { background: #d7f4d3; }
+.rtm-info-card.yellow { background: #fde49e; }
+.rtm-info-card.red { background: #f2b3b3; }
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+.circle.green { background: #1f8f39; }
+.circle.yellow { background: #e1a400; }
+.circle.red { background: #c31a1a; }
+
+/* AI Box */
+.ai-box {
+  background: #e7ebff;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* Bottom Cards */
+.rtm-bottom {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+}
+.rtm-bottom-card {
+  flex: 1;
+  padding: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;   /* Required for badge */
+}
+.rtm-bottom-card.red { background: #fdeaea; }
+.rtm-bottom-card.orange { background: #fff2df; }
+.rtm-bottom-card.yellow { background: #fffbd6; }
+
+/* Badge Styles — Perfect Position */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Red Badge */
+.badge.red {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Orange Badge */
+.badge.orange {
+  background: #ffe8cc;
+  color: #c76a11;
+}
+
+/* Yellow Badge */
+.badge.yellow {
+  background: #fff4c2;
+  color: #927d00;
+}

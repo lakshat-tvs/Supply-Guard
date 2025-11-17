@@ -1,4 +1,3 @@
-// src/pages/MainLayout.jsx
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Dashboard from "./Dashboard";
@@ -8,10 +7,12 @@ import ScenarioCatalog from "./ScenarioCatalog";
 import CreateScenario from "./CreateScenario";
 import ScenarioShocks from "./ScenarioShocks";
 import ScenarioMitigation from "./ScenarioMitigation";
-import ScenarioReview from "./ScenarioReview"; // ✅ NEW IMPORT
-import ScenarioResults from "./ScenarioResults"; // ✅ NEW IMPORT
+import ScenarioReview from "./ScenarioReview"; 
+import ScenarioResults from "./ScenarioResults"; 
+import CompareScenarios from "./CompareScenarios"; 
 
 import "../styles/MainLayout.css";
+import RiskConfiguration from "./RiskConfiguration";
 
 export default function MainLayout() {
   // ✅ Default active page
@@ -53,12 +54,20 @@ export default function MainLayout() {
       case "scenario-review":
         return <ScenarioReview setActive={setActive} />;
 
+      // ✅ Compare Scenarios view
+      case "compare-scenarios":
+        return <CompareScenarios setActive={setActive} />;
+
       case "results":
       case "scenario-results":
         return <ScenarioResults setActive={setActive} />;
 
       case "worklist":
         return <Worklist />;
+
+      case "risk-configuration":
+        return <RiskConfiguration />;
+
 
       case "settings":
         return <h2 style={{ padding: "30px" }}>Settings Page Coming Soon</h2>;
@@ -78,3 +87,56 @@ export default function MainLayout() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

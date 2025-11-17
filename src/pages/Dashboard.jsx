@@ -308,6 +308,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SupplyNetwork from "../components/SupplyNetwork";
 import SupplierPopup from "../components/SupplierPopup"; // ✅ Import new popup
+import RealTimeRiskMonitoring from "./RealTimeRiskMonitoring";
 
 export default function Dashboard({ onViewReport, onSimulate }) {
   const [highRiskOnly, setHighRiskOnly] = useState(false);
@@ -510,6 +511,7 @@ export default function Dashboard({ onViewReport, onSimulate }) {
       </div>
 
       <SupplyNetwork />
+      <RealTimeRiskMonitoring />
     </div>
   );
 }

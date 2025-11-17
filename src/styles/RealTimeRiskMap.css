@@ -1,0 +1,167 @@
+
+.map-container {
+  position: relative;
+
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- RIGHT-END ALERT SECTION --- */
+.alert-section.right-end {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.alert-box {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  pointer-events: all;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.alert-box.red {
+  background-color: #e63946;
+  color: #fff;
+}
+.alert-box.orange {
+  background-color: #f4a261;
+  color: #fff;
+}
+.alert-box.yellow {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+/* --- LEFT-ALIGNED RISK COUNTS --- */
+.risk-counts.left-aligned {
+  position: absolute;
+  bottom: 200px; /* slightly above legend */
+  left: 25px;
+  display: flex;
+  gap: 14px;
+  pointer-events: all;
+}
+
+.risk-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.risk-box span {
+  display: flex;
+  align-items: center;
+}
+
+.risk-box strong {
+  font-weight: 700;
+}
+
+
+.risk-box.high {
+  border-left: 4px solid #e63946;
+}
+.risk-box.medium {
+  border-left: 4px solid #f4a261;
+}
+.risk-box.low {
+  border-left: 4px solid #2a9d8f;
+}
+
+/* --- SUPPLIER LEGEND (BOTTOM LEFT) --- */
+.supplier-legend {
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  pointer-events: all;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot.red {
+  background-color: #e63946;
+}
+.dot.orange {
+  background-color: #f4a261;
+}
+.dot.green {
+  background-color: #2a9d8f;
+}
+
+/* --- RISK SUMMARY BOX (BOTTOM RIGHT) --- */
+.risk-summary {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 14px 18px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  pointer-events: all;
+}
+
+.risk-summary h4 {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.risk-summary p {
+  margin: 3px 0;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.red {
+  color: #e63946;
+}
+.orange {
+  color: #f4a261;
+}
+.blue {
+  color: #3a86ff;
+}
+
+/* Keep map below overlays */
+.leaflet-container {
+  z-index: 1 !important;
+}
+
